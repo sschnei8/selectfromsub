@@ -5,6 +5,8 @@
     <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ .Title }} :: {{ $.Site.Title }}{{ end }}</title>
   {{ end }}
   {{ partial "head.html" . }}
+  <script data-goatcounter="https://selectfromwhereand.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </head>
 <body class="{{- ( or .Params.color $.Site.Params.ThemeColor ) -}}">
 {{ $container := cond ($.Site.Params.FullWidthTheme | default false) "container full" (cond ($.Site.Params.CenterTheme | default false) "container center" "container") }}
