@@ -1,10 +1,27 @@
 # Terminal
 
+<<<<<<< HEAD
 ![Terminal](https://github.com/panr/hugo-theme-terminal/blob/master/images/screenshot.png?raw=true)
 
 ### DEMO - https://hugo-terminal.now.sh/
 
 <a href="https://www.buymeacoffee.com/panr" target="_blank"><img src="https://res.cloudinary.com/panr/image/upload/v1579374705/buymeacoffee_y6yvov.svg" alt="Buy Me A Coffee" ></a>
+=======
+## The theme is no longer maintained, but can still be used
+
+Even if the repository is archived you can still use the theme, fork it, download it, expand it, etc. Remember that each Hugo theme is a module that can be modified to match your needs. The theme is fully "open" and it depends only on the internal engines implemented in Hugo.
+
+The theme brings many useful features thanks to [all people that contributed to it](https://github.com/panr/hugo-theme-terminal/graphs/contributors) (I want to thank you all!). At the time of archiving the theme has reached 9th place on the [official Hugo Themes list](https://themes.gohugo.io/). This is huge! Thanks to you!
+
+----
+
+![Terminal](https://github.com/panr/hugo-theme-terminal/blob/master/images/screenshot.png?raw=true)
+
+
+### DEMO - https://hugo-terminal.now.sh/
+
+### ⚠️ The theme needs at least Hugo **Extended** v0.90.x.
+>>>>>>> subdate
 
 ---
 
@@ -16,12 +33,20 @@
 - [How to configure](#how-to-configure)
 - [Post archetype](#post-archetype)
 - [Add-ons](#add-ons)
+<<<<<<< HEAD
 - [How to (safely) edit the theme](#how-to-edit)
 - [Found a bug?](#bug)
 - [New cool idea or feature](#feature)
 - [Terminal theme user?](#terminal-theme-user)
 - [Sponsoring](#sponsoring)
 - [Licence](#licence)
+=======
+- [How to edit the theme](#how-to-edit)
+- [Found a bug?](#bug)
+- [New cool idea or feature](#feature)
+- [Terminal theme user?](#terminal-theme-user)
+- [License](#license)
+>>>>>>> subdate
 
 ## Features
 
@@ -29,6 +54,7 @@
 - [**Fira Code**](https://github.com/tonsky/FiraCode) as default monospaced font. It's gorgeous!
 - **really nice duotone**, custom syntax highlighting based on [**PrismJS**](https://prismjs.com)
 - fully responsive
+<<<<<<< HEAD
 
 #### Built-in shortcodes
 
@@ -38,6 +64,24 @@
   - eg: `{{< figure src="/img/hello.png" alt="Hello Friend" position="center" style="border-radius: 8px;" caption="Hello Friend!" captionPosition="right" captionStyle="color: red;" >}}`
 - **`code`** (prop required: **`language`**; props optional: **`title`**, **`id`**, **`expand`** (default "△"), **`collapse`** (default "▽"), **`isCollapsed`**)
   - eg:
+=======
+- fully based on Hugo ecosystem (Pipes and Modules)
+
+#### Built-in shortcodes
+
+- **`image`** (props required: **`src`**; props optional: **`alt`**, **`position`** (**left** is default | center | right), **`style`**)
+  - e.g.
+  ```go
+  {{< image src="/img/hello.png" alt="Hello Friend" position="center" style="border-radius: 8px;" >}}
+  ```
+- **`figure`** (same as `image`, plus few optional props: **`caption`**, **`captionPosition`** (left | **center** is default | right), **`captionStyle`**)
+  - e.g.
+  ```go
+  {{< figure src="/img/hello.png" alt="Hello Friend" position="center" style="border-radius: 8px;" caption="Hello Friend!" captionPosition="right" captionStyle="color: red;" >}}
+  ```
+- **`code`** (props required: **`language`**; props optional: **`title`**, **`id`**, **`expand`** (default "△"), **`collapse`** (default "▽"), **`isCollapsed`**)
+  - e.g.
+>>>>>>> subdate
   ```go
   {{< code language="css" title="Really cool snippet" id="1" expand="Show" collapse="Hide" isCollapsed="true" >}}
   pre {
@@ -78,6 +122,7 @@ A custom syntax highlighting based on PrismJS. All you need to do is to wrap you
 
 You can download the theme manually by going to [https://github.com/panr/hugo-theme-terminal.git](https://github.com/panr/hugo-theme-terminal.git) and pasting it to `themes/terminal` in your root directory.
 
+<<<<<<< HEAD
 You can also clone it directly to your Hugo folder:
 
 ```
@@ -97,6 +142,66 @@ git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/term
 If you installed all needed `npm` dependencies, then you can run:
 
 ```
+=======
+You can also choose **one of the 3 possibilities** to install the theme:
+
+1. as Hugo Module
+2. as a standalone local directory
+3. as a git submodule
+
+⚠️ The theme needs at least Hugo **Extended** v0.90.x.
+
+### Install theme as Hugo Module
+
+```bash
+# If this is the first time you're using Hugo Modules
+# in your project. You have to initiate your own module before
+# you fetch the theme module.
+#
+# hugo mod init [your website/module name]
+hugo mod get github.com/panr/hugo-theme-terminal/v3
+```
+
+and in your config file add:
+
+```toml
+[module]
+  # this is needed when you fetch the theme as a submodule to your repo.
+  # replacements = "github.com/panr/hugo-theme-terminal -> themes/terminal"
+[[module.imports]]
+  path = 'github.com/panr/hugo-theme-terminal/v3'
+```
+
+Keep in mind that the theme by default won't show up in the `themes` directory. This means that you are using the theme as it was on the repository at the moment you fetched it. Your local `go.sum` file keeps all the references. Read more about Hugo Modules in the [official documentation](https://gohugo.io/hugo-modules/).
+
+### Install theme locally
+
+```bash
+git clone https://github.com/panr/hugo-theme-terminal.git themes/terminal
+```
+
+This will clone the repository directly to the `themes/terminal` directory.
+
+### Install theme as a submodule
+
+```bash
+git submodule add -f https://github.com/panr/hugo-theme-terminal.git themes/terminal
+```
+
+This will install the repository as a sumbodule in the `themes/terminal` directory.
+
+⚠️ If you encounter any issues with:
+
+```bash
+Error: module "terminal" not found; either add it as a Hugo Module or store it in "[...your custom path]/themes".: module does not exist
+```
+
+then please try to remove `theme = "terminal"` from your config file.
+
+## How to run your site
+
+```bash
+>>>>>>> subdate
 hugo server -t terminal
 ```
 
@@ -109,6 +214,11 @@ The theme doesn't require any advanced configuration. Just copy:
 ```toml
 baseurl = "/"
 languageCode = "en-us"
+<<<<<<< HEAD
+=======
+# Add it only if you keep the theme in the `themes` directory.
+# Remove it if you use the theme as a remote Hugo Module.
+>>>>>>> subdate
 theme = "terminal"
 paginate = 5
 
@@ -148,8 +258,23 @@ paginate = 5
   # updatedDatePrefix = "Updated"
 
   # set all headings to their default size (depending on browser settings)
+<<<<<<< HEAD
   # it's set to `true` by default
   # oneHeadingSize = false
+=======
+  # oneHeadingSize = true # default
+
+  # whether to show a page's estimated reading time
+  # readingTime = false # default
+
+  # whether to show a table of contents
+  # can be overridden in a page's front-matter
+  # Toc = false # default
+
+  # set title for the table of contents
+  # can be overridden in a page's front-matter
+  # TocTitle = "Table of Contents" # default
+>>>>>>> subdate
 
 
 [params.twitter]
@@ -174,6 +299,11 @@ paginate = 5
     olderPosts = "Older posts"
     missingContentMessage = "Page not found..."
     missingBackButtonLabel = "Back to home page"
+<<<<<<< HEAD
+=======
+    minuteReadingTime = "min read"
+    words = "words"
+>>>>>>> subdate
 
     [languages.en.params.logo]
       logoText = "Terminal"
@@ -188,6 +318,17 @@ paginate = 5
         identifier = "showcase"
         name = "Showcase"
         url = "/showcase"
+<<<<<<< HEAD
+=======
+
+[module]
+  # In case you would like to make changes to the theme and keep it locally in you repository,
+  # uncomment the line below (and correct the local path if necessary).
+  # --
+  # replacements = "github.com/panr/hugo-theme-terminal -> themes/terminal"
+[[module.imports]]
+  path = 'github.com/panr/hugo-theme-terminal'
+>>>>>>> subdate
 ```
 
 to `config.toml` file in your Hugo root directory and change params fields. In case you need, here's [a YAML version](https://gist.github.com/panr/9eeea6f595c257febdadc11763e3a6d1).
@@ -204,6 +345,7 @@ See the default `post` file params supported by the theme — https://github.com
 - **Extended Head** — please take a look at `layouts/partials/extended_head.html` https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/extended_head.html
 - **Extended Footer** — please take a look at `layouts/partials/extended_footer.html` https://github.com/panr/hugo-theme-terminal/blob/master/layouts/partials/extended_footer.html
 
+<<<<<<< HEAD
 ## How to (safely) edit the theme <a id="how-to-edit" />
 
 If you have to override only some of the styles, you can do this easily by adding `static/style.css` in your root directory and point things you want to change.
@@ -237,6 +379,13 @@ yarn build
 ```
 
 To see the changes (remember to restart `hugo server`).
+=======
+## How to edit the theme <a id="how-to-edit" />
+
+If you are using as a remote Hugo Module (you don't have the theme files in the `theme/terminal`) and you have to override only some of the styles, you can do this easily by adding `static/style.css` in your root directory and point things you want to change.
+
+If you have the theme files in the theme directory, then you can directly edit anything in the theme, you just have to go to `themes/terminal` and modify the files. No compilation step needed.
+>>>>>>> subdate
 
 ## Found a bug? <a id="bug" />
 
@@ -263,6 +412,7 @@ Sounds OK? Cool, let's rock! 🤘
 
 I'd be happy to know more about you and what you are doing. If you want to share it, please make a contribution and [add your site to the list](https://github.com/panr/hugo-theme-terminal/blob/master/USERS.md)! 🤗
 
+<<<<<<< HEAD
 ## Sponsoring
 
 If you like my work and want to support the development of the project, now you can! Just:
@@ -272,5 +422,11 @@ If you like my work and want to support the development of the project, now you 
 ## License
 
 Copyright © 2019-2020 Radosław Kozieł ([@panr](https://twitter.com/panr))
+=======
+
+## License
+
+Copyright © 2019-2022 Radosław Kozieł ([@panr](https://twitter.com/panr))
+>>>>>>> subdate
 
 The theme is released under the MIT License. Check the [original theme license](https://github.com/panr/hugo-theme-terminal/blob/master/LICENSE.md) for additional licensing information.

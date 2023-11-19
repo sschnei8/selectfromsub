@@ -1,6 +1,14 @@
 {{ define "main" }}
   <div class="terms">
     <h1>{{ .Title }}</h1>
+<<<<<<< HEAD
+=======
+    {{ with .Content }}
+      <div class="index-content">
+        {{ . }}
+      </div>
+    {{ end }}
+>>>>>>> subdate
     <ul>
       {{ $type := .Type }}
       {{ range $key, $value := .Data.Terms.Alphabetical }}
@@ -8,7 +16,11 @@
       {{ $count := .Count }}
       {{ with $.Site.GetPage (printf "/%s/%s" $type $name) }}
         <li>
+<<<<<<< HEAD
           <a class="terms-title" href="{{ .Permalink }}">{{ .Name }} ({{ $count }})</a>
+=======
+          <a class="terms-title" href="{{ .Permalink }}">{{ .Name }} [{{ $count }}]</a>
+>>>>>>> subdate
         </li>
       {{ end }}
       {{ end }}

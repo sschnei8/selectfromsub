@@ -2,6 +2,10 @@
   "parser": "babel",
   "printWidth": 100,
   "trailingComma": "all",
+<<<<<<< HEAD
+=======
+  "arrowParens": "avoid",
+>>>>>>> subdate
   "overrides": [{
     "files": ".html",
     "options": {

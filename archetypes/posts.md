@@ -9,4 +9,9 @@ keywords = ["", ""]
 description = ""
 showFullContent = false
 readingTime = false
+<<<<<<< HEAD
+=======
+hideComments = false
+color = "" #color from the theme settings
+>>>>>>> subdate
 +++

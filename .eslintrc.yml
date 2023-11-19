@@ -18,7 +18,11 @@ rules:
     - as-needed
   semi:
     - 2
+<<<<<<< HEAD
     - never
+=======
+    - always
+>>>>>>> subdate
   class-methods-use-this: 0
   comma-dangle:
     - 2
@@ -33,7 +37,11 @@ rules:
   func-names: 0
   quotes:
     - 2
+<<<<<<< HEAD
     - single
+=======
+    - double
+>>>>>>> subdate
     - allowTemplateLiterals: true
   no-underscore-dangle: 0
   object-curly-newline: 0

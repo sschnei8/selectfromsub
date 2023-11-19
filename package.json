@@ -1,14 +1,25 @@
 {
   "name": "terminal",
+<<<<<<< HEAD
   "version": "2.1.0",
   "main": "index.js",
   "author": "Radosław Kozieł <@panr> <radoslaw.koziel@gmail.com>",
   "license": "MIT",
+=======
+  "version": "3.1.0",
+  "author": "Radosław Kozieł <@panr> <radoslaw.koziel@gmail.com>",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo 'Test'"
+  },
+>>>>>>> subdate
   "browserslist": [
     "last 2 versions",
     ">1%",
     "not dead"
   ],
+<<<<<<< HEAD
   "scripts": {
     "dev": "webpack --mode=development --watch",
     "build": "webpack --mode=production"
@@ -56,5 +67,34 @@
   },
   "dependencies": {
     "yarn": "^1.22.10"
+=======
+  "comments": {
+    "dependencies": {
+      "yarn": "project"
+    },
+    "devDependencies": {
+      "browserslist": "project",
+      "clipboard": "project",
+      "eslint-config-airbnb": "project",
+      "eslint-config-prettier": "project",
+      "eslint-plugin-jsx-a11y": "project",
+      "husky": "project"
+    }
+  },
+  "dependencies": {
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "browserslist": "^4.16.5",
+    "clipboard": "^2.0.4",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "husky": "^5.1.3",
+    "stylelint": "^14.14.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^6.1.0"
+>>>>>>> subdate
   }
 }
