@@ -6,32 +6,17 @@
   {{ end }}
   <div class="posts">
     {{ range .Paginator.Pages }}
-<<<<<<< HEAD
       <div class="post on-list">
-=======
-      <article class="post on-list">
->>>>>>> subdate
         <h1 class="post-title">
           <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
         </h1>
         <div class="post-meta">
-<<<<<<< HEAD
           <span class="post-date">
             {{ .Date.Format "2006-01-02" }}
           </span>
           {{ with .Params.Author }}
             <span class="post-author">:: {{ . }}</span>
           {{ end }}
-=======
-          {{- if .Date -}}
-            <time class="post-date">
-              {{- .Date.Format "2006-01-02" -}}
-            </time>
-          {{- end -}}
-          {{- with .Params.Author -}}
-            <span class="post-author">{{- . -}}</span>
-          {{- end -}}
->>>>>>> subdate
         </div>
 
         {{ if .Params.tags }}
@@ -46,26 +31,18 @@
 
         {{ partial "cover.html" . }}
 
-<<<<<<< HEAD
       
-=======
->>>>>>> subdate
         <div class="post-content">
           {{ if .Params.showFullContent }}
             {{ .Content }}
           {{ else if .Description }}
             {{ .Description | markdownify }}
           {{ else }}
-<<<<<<< HEAD
             {{ .Summary | markdownify }}
-=======
-            {{ .Summary }}
->>>>>>> subdate
           {{ end }}
         </div>
 
         {{ if not .Params.showFullContent }}
-<<<<<<< HEAD
         <div>
           <a class="read-more button"
             href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
@@ -73,15 +50,6 @@
         {{ end }}
       </div>
     {{ end }}
-=======
-          <div>
-            <a class="read-more button" href="{{.RelPermalink}}">{{ $.Site.Params.ReadMore }} →</a>
-          </div>
-        {{ end }}
-      </article>
-    {{ end }}
-
->>>>>>> subdate
     {{ partial "pagination.html" . }}
   </div>
 {{ end }}

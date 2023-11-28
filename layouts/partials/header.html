@@ -4,14 +4,7 @@
       {{ partial "logo.html" . }}
     </div>
     {{ if len $.Site.Menus }}
-<<<<<<< HEAD
       <div class="menu-trigger">menu</div>
-=======
-      {{ partial "mobile-menu.html" . }}
-    {{ end }}
-    {{ if and $.Site.Params.showLanguageSelector (len $.Site.Home.AllTranslations) }}
-      {{ partial "language-menu.html" . }}
->>>>>>> subdate
     {{ end }}
   </div>
   {{ if len $.Site.Menus }}

@@ -1,7 +1,6 @@
 <div class="pagination">
   <div class="pagination__buttons">
     {{ if .Paginator.HasPrev }}
-<<<<<<< HEAD
       <span class="button previous">
         <a href="{{ .Paginator.Prev.URL }}">
           <span class="button__icon">←</span>
@@ -16,18 +15,6 @@
           <span class="button__icon">→</span>
         </a>
       </span>
-=======
-      <a href="{{ .Paginator.Prev.URL }}" class="button previous">
-        <span class="button__icon">←</span>
-        <span class="button__text">{{ $.Site.Params.newerPosts | default "Newer posts" }}</span>
-      </a>
-    {{ end }}
-    {{ if .Paginator.HasNext }}
-      <a href="{{ .Paginator.Next.URL }}" class="button next">
-        <span class="button__text">{{ $.Site.Params.olderPosts | default "Older posts" }}</span>
-        <span class="button__icon">→</span>
-      </a>
->>>>>>> subdate
     {{ end }}
   </div>
 </div>
