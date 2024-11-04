@@ -1,0 +1,61 @@
+<div class="belief-animation-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+        <defs>
+            <g id="person">
+                <circle r="5" cy="-25" fill="currentColor"/>
+                <line x1="0" y1="-20" x2="0" y2="-10" stroke="currentColor" stroke-width="2"/>
+                <line x1="0" y1="-10" x2="-5" y2="0" stroke="currentColor" stroke-width="2"/>
+                <line x1="0" y1="-10" x2="5" y2="0" stroke="currentColor" stroke-width="2"/>
+                <line x1="0" y1="-17" x2="-5" y2="-10" stroke="currentColor" stroke-width="2"/>
+                <line x1="0" y1="-17" x2="5" y2="-10" stroke="currentColor" stroke-width="2"/>
+            </g>
+            <path id="curvePath" d="M 50,200 Q 100,100 150,180 T 250,140 T 350,80" fill="none"/>
+        </defs>
+        <!-- Draw axes -->
+        <line x1="50" y1="250" x2="350" y2="250" stroke="currentColor" stroke-width="1"/>
+        <line x1="50" y1="50" x2="50" y2="250" stroke="currentColor" stroke-width="1"/>
+        <!-- Draw the belief landscape curve -->
+        <path d="M 50,200 Q 100,100 150,180 T 250,140 T 350,80"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"/>
+        <use href="#person">
+            <animateMotion
+                id="personMotion"
+                dur="12s"
+                repeatCount="indefinite"
+                keyPoints="0;0.3;0.2;0.5;0.4;0.7;0.44;0.44;0.44"
+                keyTimes="0;0.2;0.3;0.5;0.6;0.8;0.9;0.95;1"
+                calcMode="linear"
+                rotate="auto"
+                begin="indefinite">
+                <mpath href="#curvePath"/>
+            </animateMotion>
+        </use>
+    </svg>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create intersection observer
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Find the animation element within the observed container
+            const animation = entry.target.querySelector('#personMotion');
+            if (entry.isIntersecting) {
+                // Start animation when element comes into view
+                animation.beginElement();
+            } else {
+                animation.endElement();
+                animation.setAttribute('begin', 'indefinite');
+            }
+        });
+    }, {
+        // Configure the observer
+        threshold: 0.2  // Trigger when 20% of the element is visible
+    });
+    // Observe all animation containers
+    document.querySelectorAll('.belief-animation-container').forEach(container => {
+        observer.observe(container);
+    });
+});
+</script>

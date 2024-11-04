@@ -1,0 +1,18 @@
+.belief-animation-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+.belief-animation-container svg {
+    width: 100%;
+    height: auto;
+    /* Use terminal theme colors */
+    color: var(--primary-color, #fff);
+    background: var(--background-color, transparent);
+}
+/* Optional: Add terminal-like border */
+.belief-animation-container {
+    border: 1px solid var(--border-color, #333);
+    border-radius: 4px;
+}
